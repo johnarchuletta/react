@@ -1,0 +1,4 @@
+/node_modules
+/.sass-cache
+/.git
+/database/database.config.js
