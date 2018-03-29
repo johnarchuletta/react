@@ -2,15 +2,13 @@ This project uses [Node](https://nodejs.org/en/), [Express](https://expressjs.co
 
 # Getting Started
 
-Before you do anything, do these two steps:
+In order for the server to start without any errors, do these two steps first:
 
 1. Create a database that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
 
     It is recommended to put at least one entry into this table for testing purposes.
 
-    This table exists only as an example and you are free to remove it at any time - just remember to remove the `user` route and controller if and when you do.
-
-    You can check if your database is working correctly by going to `localhost:8080/users` after doing the next step.
+    This table exists only as an example and you are free to remove it at any time. Remember to remove the `user` route and controller if and when you do.
 
 2. Create `/database/database.config.js`, which should look like this:
 
@@ -25,6 +23,18 @@ Before you do anything, do these two steps:
         }
     };
     ```
+
+You should now be able to start the server:
+
+    npm start
+
+Check if everything is working by visiting `localhost:8080/`.
+
+To see if your database connection is working, visit `localhost:8080/users`.
+
+# Next Steps
+
+
 
 For more information about valid `options`, read the [documentation](http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor).
 
