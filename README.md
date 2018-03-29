@@ -4,7 +4,7 @@ This project uses [Node](https://nodejs.org/en/), [Express](https://expressjs.co
 
 In order for the server to start without any errors, do these two steps first:
 
-1. Create a database that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
+1. Create a database (MySQL, Postgres, etc) that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
 
     It is recommended to put at least one entry into this table for testing purposes.
 
