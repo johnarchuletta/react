@@ -1,25 +1,53 @@
+![react-boilerplate](README.png)
+
 This project uses [Node](https://nodejs.org/en/), [Express](https://expressjs.com/), [Pug](https://pugjs.org/api/getting-started.html), [React](https://reactjs.org/), and [Sequelize](http://docs.sequelizejs.com/).
 
 # Getting Started
 
 In order for the server to start without any errors, do these two steps first:
 
-1. Create a database (MySQL, Postgres, etc) that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
+1. Create a MySQL database that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
 
-    It is recommended to put at least one entry into this table for testing purposes.
+    Open a MySQL console:
 
-    This table exists only as an example and you are free to remove it at any time. Remember to remove the `user` route and controller if and when you do.
+    ```
+    /usr/local/mysql/mysql -uroot -p
+    ```
+
+    Create a database and add a `users` table with a single entry in it:
+
+    ```sql
+    CREATE DATABASE dbName;
+
+    CREATE TABLE dbName.users (
+        id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        firstName VARCHAR(50) NOT NULL,
+        lastName VARCHAR(50) NOT NULL,
+        createdAt VARCHAR(50),
+        updatedAt VARCHAR(50),
+        CONSTRAINT pk_example PRIMARY KEY (id)
+    );
+
+    INSERT INTO dbName.users VALUES(
+        0,
+        'John',
+        'Doe',
+        '',
+        ''
+    );
+    ```
 
 2. Create `/database/database.config.js`, which should look like this:
 
-    ```
+    ```javascript
     module.exports = {
-        database: 'database',
+        database: 'dbName',
         username: 'user',
         password: 'password',
         options: {
             dialect: 'mysql',
-            host: 'localhost'
+            host: 'localhost',
+            port: 3306
         }
     };
     ```
