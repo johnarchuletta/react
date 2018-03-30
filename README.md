@@ -3,39 +3,39 @@
 This project uses [Node](https://nodejs.org/en/), [Express](https://expressjs.com/), [Pug](https://pugjs.org/api/getting-started.html), [React](https://reactjs.org/), and [Sequelize](http://docs.sequelizejs.com/).
 
 # Getting Started
-
-In order for the server to start without any errors, do these two steps first:
+ 
+Before starting the web server, you must set up the database first with the following steps:
 
 1. Create a MySQL database that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
 
-    Open a MySQL console:
+    * Open a MySQL console:
 
-    ```
-    /usr/local/mysql/mysql -uroot -p
-    ```
+        ```
+        /usr/local/mysql/mysql -uroot -p
+        ```
 
-    Create a database and add a `users` table with a single entry in it:
+    * Create a database and add a `users` table with a single entry in it:
 
-    ```sql
-    CREATE DATABASE dbName;
+        ```sql
+        CREATE DATABASE dbName;
 
-    CREATE TABLE dbName.users (
-        id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-        firstName VARCHAR(50) NOT NULL,
-        lastName VARCHAR(50) NOT NULL,
-        createdAt VARCHAR(50),
-        updatedAt VARCHAR(50),
-        CONSTRAINT pk_example PRIMARY KEY (id)
-    );
+        CREATE TABLE dbName.users (
+            id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            firstName VARCHAR(50) NOT NULL,
+            lastName VARCHAR(50) NOT NULL,
+            createdAt VARCHAR(50),
+            updatedAt VARCHAR(50),
+            CONSTRAINT pk_example PRIMARY KEY (id)
+        );
 
-    INSERT INTO dbName.users VALUES(
-        0,
-        'John',
-        'Doe',
-        '',
-        ''
-    );
-    ```
+        INSERT INTO dbName.users VALUES(
+            0,
+            'John',
+            'Doe',
+            '',
+            ''
+        );
+        ```
 
 2. Create `/database/database.config.js`, which should look like this:
 
@@ -52,24 +52,30 @@ In order for the server to start without any errors, do these two steps first:
     };
     ```
 
-You should now be able to start the server:
+You should now be able to serve your app:
 
-    npm start
+```
+npm run serve
+```
 
-Check if everything is working by visiting `localhost:8080/`.
+Check if the server is running correctly by visiting  [http://localhost:8080/]().
 
-To see if your database connection is working, visit `localhost:8080/users`.
+To check if your database connection is working correctly, visit [http://localhost:8080/users]().
 
 # Next Steps
 
+## Watching SASS files for changes
 
+Run the following NPM script in your project directory.
 
-For more information about valid `options`, read the [documentation](http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor).
+```
+npm run sass
+```
 
+You can download and install SASS [here](https://sass-lang.com/).
 
-`npm` scripts:
-* `npm serve`
-    * Starts an Express server that uses `reload` to update pages after saved changes.
-* `npm build`
-    * 
-* `npm sass`
+## Running Webpack to bundle your app
+
+```
+npm run build
+```
