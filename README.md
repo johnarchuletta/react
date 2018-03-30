@@ -79,3 +79,5 @@ You can download and install SASS [here](https://sass-lang.com/).
 ```
 npm run build
 ```
+
+This will run Webpack in 'watch' mode which will automatically trigger builds whenever changes to the app's source code changes.
