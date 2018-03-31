@@ -6,7 +6,19 @@ This project uses [Node](https://nodejs.org/en/), [Express](https://expressjs.co
  
 Before starting the web server, you must set up the database first with the following steps:
 
-1. Create a MySQL database that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
+1. Install project dependencies:
+
+    ```
+    npm install --save
+    ```
+
+2. Remove Git remote:
+
+    ```
+    git remote remove origin
+    ```
+
+3. Create a MySQL database that has a table named `users`, which has the columns `firstName`, `lastName`, `createdAt`, and `updatedAt` in it.
 
     * Open a MySQL console:
 
@@ -37,7 +49,7 @@ Before starting the web server, you must set up the database first with the foll
         );
         ```
 
-2. Create `/database/database.config.js`, which should look like this:
+4. Create `/database/database.config.js`, which should look like this:
 
     ```javascript
     module.exports = {
