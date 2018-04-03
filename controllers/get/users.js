@@ -1,9 +1,20 @@
 const path = require('path');
-const db = require(path.join(process.cwd(), 'database'));
+const models = require(path.join(process.cwd(), '/models'));
 
 module.exports = (req, res) => {
-  db.user.findAll()
-    .then(users => {
-      return res.json(users);
-    })
+  models.user.findAll()
+
+  .then(users => {
+    return res.json({
+      status: 'success',
+      data: users
+    });
+  })
+
+  .catch(err => {
+    return res.status(500).json({
+      status: 'error',
+      data: err
+    });
+  });
 }

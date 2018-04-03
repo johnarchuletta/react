@@ -1,4 +1,6 @@
 /node_modules
 /.sass-cache
 /.git
-/database/database.config.js
+/config/database.js
+/config/server.js
+/.DS_Store

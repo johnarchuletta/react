@@ -1,5 +1,5 @@
 const path = require('path');
-const db = require(path.join(process.cwd(), 'database'));
+const models = require(path.join(process.cwd(), '/models'));
 
 module.exports = (req, res) => {
   return res.render('index');

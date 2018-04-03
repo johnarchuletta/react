@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-  return res.render('404');
+  return res.render('Not Found');
 }

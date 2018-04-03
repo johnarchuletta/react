@@ -8,7 +8,7 @@ const session = require('express-session');
 
 const app = express();
 
-const config = require('./server.config.js');
+const config = require('./config/server.js');
 
 app.set('view engine', 'pug');
 app.set('view cache', false);
