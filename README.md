@@ -49,7 +49,7 @@ Before starting the web server, you must set up the database first with the foll
         );
         ```
 
-4. Create `/database/database.config.js`, which should look like this:
+4. Create `/config/database.js`, which should look like this:
 
     ```javascript
     module.exports = {
@@ -60,6 +60,26 @@ Before starting the web server, you must set up the database first with the foll
             dialect: 'mysql',
             host: 'localhost',
             port: 3306
+        }
+    };
+    ```
+
+5. Create `/config/server.js`, which should look like this:
+
+    ```javascript
+    module.exports = {
+        server: {
+            port: process.env.PORT || 8080
+        },
+        session: {
+            options: {
+                secret: process.env.SESSION_SECRET || 'secret',
+                resave: false,
+                saveUninitialized: true,
+                cookie: {
+                    maxAge: 60000 * 60
+                }
+            }
         }
     };
     ```
